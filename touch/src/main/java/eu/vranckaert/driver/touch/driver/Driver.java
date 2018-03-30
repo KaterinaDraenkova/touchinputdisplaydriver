@@ -4,8 +4,8 @@ import android.util.Log;
 import android.view.InputDevice;
 import android.view.MotionEvent;
 
-import com.google.android.things.userdriver.InputDriver;
 import com.google.android.things.userdriver.UserDriverManager;
+import com.google.android.things.userdriver.input.InputDriver;
 
 import java.io.Serializable;
 
@@ -51,7 +51,7 @@ public abstract class Driver implements Serializable {
                 .setAbsMax(MotionEvent.AXIS_X, driverProfile.getScreenDimension().getWidth())
                 .setAbsMax(MotionEvent.AXIS_Y, driverProfile.getScreenDimension().getHeight())
                 .build();
-        UserDriverManager.getManager().registerInputDriver(mInputDriver);
+        UserDriverManager.getInstance().registerInputDriver(mInputDriver);
         Log.i(LOG_TAG, "Touch Screen Driver registered!");
 
         Log.v(LOG_TAG, "Setting up input thread!");

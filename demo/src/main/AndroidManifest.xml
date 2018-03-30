@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.vranckaert.driver.touch.demo">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="eu.vranckaert.driver.touch.demo">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -8,7 +9,11 @@
 
     <application
         android:name=".ThingsApplication">
-        <uses-library android:name="com.google.android.things" />
+        <!--<uses-library android:name="com.google.android.things" />-->
+        <uses-library
+            android:name="com.google.android.things"
+            android:required="false"
+            tools:replace="android:required" />
 
         <activity
             android:name=".SplashActivity"
